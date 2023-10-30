@@ -1,31 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    public float speed = 5f;
+    [SerializeField] private float _speed = 5f;
 
-    private Rigidbody2D rb;
-    private float movement = 0f;
-    // Start is called before the first frame update
+    private Rigidbody2D _rb;
+    private float _movement = 0f;
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        movement = Input.GetAxis("Horizontal") * speed;
+        _movement = Input.GetAxis("Horizontal") * _speed;
     }
 
     private void FixedUpdate()
     {
-        Vector2 velocity = rb.velocity;
-        velocity.x = movement;
-        rb.velocity = velocity;
+        Vector2 velocity = _rb.velocity;
+        velocity.x = _movement;
+        _rb.velocity = velocity;
     }
     public void Die()
     {

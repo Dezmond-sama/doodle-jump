@@ -1,18 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private Transform _spawnBorder;
     [SerializeField] private Platform _platformPrefab;
-    private int count;
     [SerializeField] private float _levelWidth = 3f;
     [SerializeField] private Vector3 _startPoint;
     [SerializeField] private float _minY = .2f;
     [SerializeField] private float _maxY = 1.5f;
     [SerializeField] private float _maxX = 1.5f;
-    Vector3 _spawnPoint;
+    private Vector3 _spawnPoint;
     private void Start()
     {
         _spawnPoint = _startPoint;

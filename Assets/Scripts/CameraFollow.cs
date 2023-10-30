@@ -22,9 +22,7 @@ public class CameraFollow : MonoBehaviour
     }
     private void MoveHorizontal()
     {
-
         Vector3 pos = new Vector3(_target.position.x, transform.position.y, transform.position.z);
         transform.position = Vector3.SmoothDamp(transform.position, pos, ref _currentVelocity, _speedX);
-
     }
 }

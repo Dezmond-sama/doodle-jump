@@ -2,11 +2,7 @@
 
 public class Platform : MonoBehaviour
 {
-    public float jumpForce = 10f;
-    private void Awake()
-    {
-
-    }
+    [SerializeField] private float _jumpForce = 10f;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.relativeVelocity.y <= 0)
@@ -15,7 +11,7 @@ public class Platform : MonoBehaviour
             if (rb != null)
             {
                 Vector2 velocity = rb.velocity;
-                velocity.y = jumpForce;
+                velocity.y = _jumpForce;
                 rb.velocity = velocity;
             }
         }
